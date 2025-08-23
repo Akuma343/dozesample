@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dooze Coffee Club Menu</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <!-- Main Header -->
+  <header class="header">
+    <img src="dooze.jpg" alt="Dooze Coffee Club Logo" class="logo">
+   <nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="menu.html" >Menu</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+  </header>
+
+  <!-- Category Navigation -->
+  <div class="category-nav">
+    <a href="menu.html">Coffee</a>
+    <a href="frappes.html">Frappes</a>
+    <a href="pastries.html">Pastries</a>
+    <a href="sandwich.html">Sandwiches</a>
+  </div>
+
+  <!-- Hot Coffee Section -->
+  <section class="menu-section" id="hot">
+    <h2>Hot Coffee</h2>
+    <div class="menu-container">
+      <!-- Espresso -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="espres.jpg" alt="Espresso" class="card-img">
+            <h3 class="title">Espresso</h3>
+            <p>₱120</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Espresso</h3>
+            <p>Pure ground coffee shot with hot water.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Cappuccino -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="cappu.webp" alt="Cappuccino" class="card-img">
+            <h3 class="title">Cappuccino</h3>
+            <p>₱140</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Cappuccino</h3>
+            <p>Espresso, steamed milk, and foam.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Latte -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="latte.jpg" alt="Latte" class="card-img">
+            <h3 class="title">Latte</h3>
+            <p>₱130</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Latte</h3>
+            <p>Espresso with lots of steamed milk.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Iced Coffee Section -->
+  <section class="menu-section" id="iced">
+    <h2>Iced Coffee</h2>
+    <div class="menu-container">
+      <!-- Iced Americano -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/iced-americano.jpg" alt="Iced Americano" class="card-img">
+            <h3 class="title">Iced Americano</h3>
+            <p>₱110</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Iced Americano</h3>
+            <p>Espresso with cold water and ice.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Iced Latte -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/iced-latte.jpg" alt="Iced Latte" class="card-img">
+            <h3 class="title">Iced Latte</h3>
+            <p>₱130</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Iced Latte</h3>
+            <p>Espresso, milk, ice, and sweetener.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Iced Mocha -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/iced-mocha.jpg" alt="Iced Mocha" class="card-img">
+            <h3 class="title">Iced Mocha</h3>
+            <p>₱150</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Iced Mocha</h3>
+            <p>Espresso, milk, chocolate syrup, and ice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Contact us: hello@doozecoffee.com</p>
+    <p>&copy; 2024 Dooze Coffee Club</p>
+  </footer>
+
+    <!-- JS for Active Highlight & Fade-in -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll(".category-nav a");
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // Highlight active nav link
+      links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+
+      // Fade-in animation on scroll
+      const sections = document.querySelectorAll(".menu-section");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+</body>
+</html>

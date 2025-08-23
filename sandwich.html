@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dooze Coffee Club - Sandwiches</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <!-- Main Header -->
+  <header class="header">
+    <img src="dooze.jpg" alt="Dooze Coffee Club Logo" class="logo">
+   <nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="menu.html" >Menu</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+  </header>
+
+  <!-- Category Navigation -->
+  <div class="category-nav">
+    <a href="menu.html">Coffee</a>
+    <a href="frappes.html">Frappes</a>
+    <a href="pastries.html">Pastries</a>
+    <a href="sandwich.html">Sandwiches</a>
+  </div>
+
+  <!-- Sandwiches Section -->
+  <section class="menu-section" id="sandwiches">
+    <h2>Sandwiches</h2>
+    <div class="menu-container">
+      <!-- Ham & Cheese Sandwich -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/ham-cheese.jpg" alt="Ham & Cheese Sandwich" class="card-img">
+            <h3 class="title">Ham & Cheese Sandwich</h3>
+            <p>₱95</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Ham & Cheese Sandwich</h3>
+            <p>Classic grilled sandwich with ham and melted cheese.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Chicken Panini -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/chicken-panini.jpg" alt="Chicken Panini" class="card-img">
+            <h3 class="title">Chicken Panini</h3>
+            <p>₱130</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Chicken Panini</h3>
+            <p>Grilled panini stuffed with chicken, cheese, and veggies.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Club Sandwich -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/club-sandwich.jpg" alt="Club Sandwich" class="card-img">
+            <h3 class="title">Club Sandwich</h3>
+            <p>₱140</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Club Sandwich</h3>
+            <p>Triple-layer sandwich with chicken, bacon, and lettuce.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tuna Sandwich -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/tuna-sandwich.jpg" alt="Tuna Sandwich" class="card-img">
+            <h3 class="title">Tuna Sandwich</h3>
+            <p>₱110</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Tuna Sandwich</h3>
+            <p>Light and savory tuna spread with fresh veggies.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Egg Salad Sandwich -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/egg-salad.jpg" alt="Egg Salad Sandwich" class="card-img">
+            <h3 class="title">Egg Salad Sandwich</h3>
+            <p>₱90</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Egg Salad Sandwich</h3>
+            <p>Creamy egg salad on toasted bread.</p>
+          </div>
+        </div>
+      </div>
+      <!-- BLT Sandwich -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/blt.jpg" alt="BLT Sandwich" class="card-img">
+            <h3 class="title">BLT Sandwich</h3>
+            <p>₱120</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>BLT Sandwich</h3>
+            <p>Bacon, lettuce, and tomato on toasted bread.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <p>Contact us: hello@doozecoffee.com</p>
+    <p>&copy; 2024 Dooze Coffee Club</p>
+  </footer>
+
+    <!-- JS for Active Highlight & Fade-in -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll(".category-nav a");
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // Highlight active nav link
+      links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+
+      // Fade-in animation on scroll
+      const sections = document.querySelectorAll(".menu-section");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+</body>
+</html>

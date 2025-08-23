@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dooze Coffee Club - Frappes</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <!-- Main Header -->
+  <header class="header">
+    <img src="dooze.jpg" alt="Dooze Coffee Club Logo" class="logo">
+   <nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="menu.html" >Menu</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+  </header>
+
+  <!-- Category Navigation -->
+  <div class="category-nav">
+    <a href="menu.html">Coffee</a>
+    <a href="frappes.html">Frappes</a>
+    <a href="pastries.html">Pastries</a>
+    <a href="sandwich.html">Sandwiches</a>
+  </div>
+
+  <!-- Frappes Section -->
+  <section class="menu-section" id="frappes">
+    <h2>Frappes</h2>
+    <div class="menu-container">
+      <!-- Mocha Frappe -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/mocha-frappe.jpg" alt="Mocha Frappe" class="card-img">
+            <h3 class="title">Mocha Frappe</h3>
+            <p>₱160</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Mocha Frappe</h3>
+            <p>Chocolate, espresso, milk, and ice blended into a rich frappe.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Caramel Frappe -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/caramel-frappe.jpg" alt="Caramel Frappe" class="card-img">
+            <h3 class="title">Caramel Frappe</h3>
+            <p>₱170</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Caramel Frappe</h3>
+            <p>Espresso, caramel syrup, milk, and whipped cream topping.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Vanilla Frappe -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/vanilla-frappe.jpg" alt="Vanilla Frappe" class="card-img">
+            <h3 class="title">Vanilla Frappe</h3>
+            <p>₱150</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Vanilla Frappe</h3>
+            <p>Smooth vanilla blend with espresso, milk, and ice.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Strawberry Frappe -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/strawberry-frappe.jpg" alt="Strawberry Frappe" class="card-img">
+            <h3 class="title">Strawberry Frappe</h3>
+            <p>₱160</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Strawberry Frappe</h3>
+            <p>Fresh strawberries blended with milk and ice, topped with cream.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Matcha Frappe -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/matcha-frappe.jpg" alt="Matcha Frappe" class="card-img">
+            <h3 class="title">Matcha Frappe</h3>
+            <p>₱180</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Matcha Frappe</h3>
+            <p>Japanese matcha green tea blended with milk and ice.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Cookies & Cream Frappe -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/cookies-frappe.jpg" alt="Cookies & Cream Frappe" class="card-img">
+            <h3 class="title">Cookies & Cream Frappe</h3>
+            <p>₱175</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Cookies & Cream Frappe</h3>
+            <p>Oreo cookies blended with cream, milk, and ice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <p>Contact us: hello@doozecoffee.com</p>
+    <p>&copy; 2024 Dooze Coffee Club</p>
+  </footer>
+
+    <!-- JS for Active Highlight & Fade-in -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll(".category-nav a");
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // Highlight active nav link
+      links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+
+      // Fade-in animation on scroll
+      const sections = document.querySelectorAll(".menu-section");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+</body>
+</html>

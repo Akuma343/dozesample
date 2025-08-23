@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dooze Coffee Club - Pastries</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <!-- Main Header -->
+<header class="header">
+    <img src="dooze.jpg" alt="Dooze Coffee Club Logo" class="logo">
+   <nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="menu.html" >Menu</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+  </header>
+
+  <!-- Category Navigation -->
+<div class="category-nav">
+    <a href="menu.html">Coffee</a>
+    <a href="frappes.html">Frappes</a>
+    <a href="pastries.html">Pastries</a>
+    <a href="sandwich.html">Sandwiches</a>
+  </div>
+
+  <!-- Pastries Section -->
+  <section class="menu-section" id="pastries">
+    <h2>Pastries</h2>
+    <div class="menu-container">
+      <!-- Croissant -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/croissant.jpg" alt="Croissant" class="card-img">
+            <h3 class="title">Croissant</h3>
+            <p>₱70</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Croissant</h3>
+            <p>Flaky and buttery French pastry, perfect with coffee.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Chocolate Muffin -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/muffin.jpg" alt="Chocolate Muffin" class="card-img">
+            <h3 class="title">Chocolate Muffin</h3>
+            <p>₱85</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Chocolate Muffin</h3>
+            <p>Rich and moist muffin with chunks of chocolate.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Blueberry Cheesecake -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/blueberry-cheesecake.jpg" alt="Blueberry Cheesecake" class="card-img">
+            <h3 class="title">Blueberry Cheesecake</h3>
+            <p>₱120</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Blueberry Cheesecake</h3>
+            <p>Creamy cheesecake topped with blueberry compote.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Cinnamon Roll -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/cinnamon-roll.jpg" alt="Cinnamon Roll" class="card-img">
+            <h3 class="title">Cinnamon Roll</h3>
+            <p>₱95</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Cinnamon Roll</h3>
+            <p>Warm roll swirled with cinnamon sugar and icing.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Apple Pie -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/apple-pie.jpg" alt="Apple Pie" class="card-img">
+            <h3 class="title">Apple Pie</h3>
+            <p>₱110</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Apple Pie</h3>
+            <p>Classic apple pie with golden crust and cinnamon.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Brownie -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/brownie.jpg" alt="Brownie" class="card-img">
+            <h3 class="title">Brownie</h3>
+            <p>₱80</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Brownie</h3>
+            <p>Fudgy chocolate brownie topped with nuts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <p>Contact us: hello@doozecoffee.com</p>
+    <p>&copy; 2024 Dooze Coffee Club</p>
+  </footer>
+
+  <!-- JS for Active Highlight & Fade-in -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll(".category-nav a");
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // Highlight active nav link
+      links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+
+      // Fade-in animation on scroll
+      const sections = document.querySelectorAll(".menu-section");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+</body>
+</html>
