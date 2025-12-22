@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalWidth = items.length * slideDistance - gap; // Total width of all items
     const viewportCenter = window.innerWidth / 2;
     const carouselCenter = totalWidth / 2;
-    const slideOffset = viewportCenter - carouselCenter - (current * slideDistance) - 280; // Added -50px offset to move right
+    const slideOffset = viewportCenter - carouselCenter - (current * slideDistance) - 180; // Added -50px offset to move right
     
     // Apply sliding animation to container
     carouselContainer.style.transform = `translateX(${slideOffset}px)`;
